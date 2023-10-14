@@ -1,10 +1,10 @@
 import React from 'react'
 
-const Score = ({score}) => {
+const Score = ({nameScore}) => {
   return (
     <div>
      <h1>Completed Quizz.</h1>
-     <p>Your score : {score}</p>
+     <p>Your score : {nameScore}</p>
     </div>
   )
 }

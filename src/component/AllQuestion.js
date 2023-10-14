@@ -1,6 +1,6 @@
 import React from 'react'
 
-const AllQuestion = () => {
+const AllQuestion = ({nameData}) => {
   return (
     <div>
       
