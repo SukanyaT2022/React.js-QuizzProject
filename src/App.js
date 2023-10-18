@@ -1,25 +1,45 @@
 import React, { useState } from 'react'
-import data from './component/DataQuestions'
+import {data} from './component/DataQuestions'
 import AllQuestion from './component/AllQuestion'
 import Score from './component/Score'
 const App = () => {
   // hold current question
 const[currentQuestion, setCurrentQuestion] = useState(0)
   //hold score
-  const[score, setScore] = useState()
-  
+  const[score, setScore] = useState(0)
+
+  // step5 create function if correct get score if not corect no score
+
+//below function deal with answer array
+const handleAnswerClick =(selectedOption)=>{
+if (selectedOption === data[currentQuestion].answer){
+  setScore(score + 1)
+  //if it true we put score plus 1
+}
+
+
+//below function deal with question array
+const nextQuestion = currentQuestion + 1
+//+1 is menas next question-  adfd 1 to cuurent value - then next question 2 3 4
+//below check question if it in the ra ge of questions
+if(nextQuestion < data.length){
+  setCurrentQuestion(nextQuestion)
+}else{
+  console.log("You answer all questions")
+}
+}
+
   return (
     <div>
+      
     {
       //ternary if else
       //check if 2 less than    7     if true run line 16 if false run line 17
       //we do this coz we want user answer question before show score
       //example if check email have to see log in page first then  can check email
-      currentQuestion < data.length ?
-       (  <AllQuestion nameData ={data[currentQuestion]}/>):
-       (<Score nameScore={score}/>)
-  
-    
+      (currentQuestion < data.length - 1) ?
+       (  <AllQuestion nameData ={data[currentQuestion]} nameFunchandleAnswerClick = {handleAnswerClick}/>):
+       (<Score nameScore={score} nameDataScore = {data}/>)
     }
     </div>
   )
