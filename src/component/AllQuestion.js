@@ -1,7 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './AllQuestion.css';
 
-const AllQuestion = ({ nameData, nameFunchandleAnswerClick }) => {
+
+const AllQuestion = ({ nameData, nameFunchandleAnswerClick, nameHandleNextClick }) => {
+  const [resetSelectedOption, setResetSelectedOption] = useState(null)
+  
+  const handleResetOption =(e)=>{
+setResetSelectedOption(e.target.value)
+  }
+
+  const handleNextButton =()=>{
+    setResetSelectedOption(null)
+    nameHandleNextClick(resetSelectedOption)
+  }
   return (
     <div>
       <h2>Question No. {nameData.id}</h2>
@@ -13,12 +24,18 @@ const AllQuestion = ({ nameData, nameFunchandleAnswerClick }) => {
       
           <li onClick={() => nameFunchandleAnswerClick(val)} key={index}>
   
-            <input type="radio" />
+            <input 
+            type="radio" 
+            value={val} 
+            checked={resetSelectedOption === val}  
+            onChange={handleResetOption}/>
             {val}
           </li>
           </label>
         ))}
       </ul>
+
+    <button onClick={handleNextButton}>Next</button>
     </div>
   );
 };

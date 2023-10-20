@@ -10,23 +10,22 @@ const[currentQuestion, setCurrentQuestion] = useState(0)
 
   // step5 create function if correct get score if not corect no score
 
-//below function deal with answer array
+//funnction 1- below function deal with answer array
 const handleAnswerClick =(selectedOption)=>{
 if (selectedOption === data[currentQuestion].answer){
   setScore(score + 1)
   //if it true we put score plus 1
 }
-
-
-//below function deal with question array
-const nextQuestion = currentQuestion + 1
-//+1 is menas next question-  adfd 1 to cuurent value - then next question 2 3 4
-//below check question if it in the ra ge of questions
-if(nextQuestion < data.length){
-  setCurrentQuestion(nextQuestion)
-}else{
-  console.log("You answer all questions")
 }
+//function 2- work on next button - only when click
+//we need this function to Allquestions.js
+const handleNextClick = ()=>{
+  const nextQuestion = currentQuestion + 1
+  if (nextQuestion < data.length){
+    setCurrentQuestion(nextQuestion)
+  }else{
+    console.log("You answer all questions")
+  }
 }
 
   return (
@@ -38,7 +37,7 @@ if(nextQuestion < data.length){
       //we do this coz we want user answer question before show score
       //example if check email have to see log in page first then  can check email
       (currentQuestion < data.length - 1) ?
-       (  <AllQuestion nameData ={data[currentQuestion]} nameFunchandleAnswerClick = {handleAnswerClick}/>):
+       (  <AllQuestion nameData ={data[currentQuestion]} nameFunchandleAnswerClick = {handleAnswerClick} nameHandleNextClick={handleNextClick}/>):
        (<Score nameScore={score} nameDataScore = {data}/>)
     }
     </div>
