@@ -19,6 +19,7 @@ if (selectedOption === data[currentQuestion].answer){
 }
 //function 2- work on next button - only when click
 //we need this function to Allquestions.js
+//this function change current function to nextbquestion by increment
 const handleNextClick = ()=>{
   const nextQuestion = currentQuestion + 1
   if (nextQuestion < data.length){

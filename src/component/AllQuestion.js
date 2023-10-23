@@ -9,9 +9,10 @@ const AllQuestion = ({ nameData, nameFunchandleAnswerClick, nameHandleNextClick 
 setResetSelectedOption(e.target.value)
   }
 
+  //evrey time when click next button this function will work
   const handleNextButton =()=>{
-    setResetSelectedOption(null)
-    nameHandleNextClick(resetSelectedOption)
+    setResetSelectedOption(null) // it reset radio bauuton everytime when click next button
+    nameHandleNextClick(resetSelectedOption) //nameHandleNextClick set question function from app.js
   }
   return (
     <div>
