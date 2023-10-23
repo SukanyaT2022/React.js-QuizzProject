@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import {data} from './component/DataQuestions'
 import AllQuestion from './component/AllQuestion'
 import Score from './component/Score'
+import './App.css'
 const App = () => {
   // hold current question
 const[currentQuestion, setCurrentQuestion] = useState(0)
@@ -19,7 +20,7 @@ if (selectedOption === data[currentQuestion].answer){
 }
 //function 2- work on next button - only when click
 //we need this function to Allquestions.js
-//this function change current function to nextbquestion by increment
+//this function change current function to next question by increment
 const handleNextClick = ()=>{
   const nextQuestion = currentQuestion + 1
   if (nextQuestion < data.length){
@@ -30,9 +31,11 @@ const handleNextClick = ()=>{
 }
 
   return (
-    <div>
-      
+    <div className='wrapper'>
+      <h2>Take the Quiz</h2>
+      <div className='mainBox'>
     {
+      
       //ternary if else
       //check if 2 less than    7     if true run line 16 if false run line 17
       //we do this coz we want user answer question before show score
@@ -41,6 +44,7 @@ const handleNextClick = ()=>{
        (  <AllQuestion nameData ={data[currentQuestion]} nameFunchandleAnswerClick = {handleAnswerClick} nameHandleNextClick={handleNextClick}/>):
        (<Score nameScore={score} nameDataScore = {data}/>)
     }
+    </div>
     </div>
   )
 }

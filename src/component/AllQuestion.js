@@ -11,11 +11,12 @@ setResetSelectedOption(e.target.value)
 
   //evrey time when click next button this function will work
   const handleNextButton =()=>{
-    setResetSelectedOption(null) // it reset radio bauuton everytime when click next button
+    setResetSelectedOption(null) // it reset radio batton everytime when click next button
     nameHandleNextClick(resetSelectedOption) //nameHandleNextClick set question function from app.js
   }
   return (
     <div>
+    
       <h2>Question No. {nameData.id}</h2>
       <h2>{nameData.question}</h2>
       <ul>
@@ -24,11 +25,14 @@ setResetSelectedOption(e.target.value)
           <label>
       
           <li onClick={() => nameFunchandleAnswerClick(val)} key={index}>
+            {/* val is number from multiple choices */}
+            {/* // nameFunchandleAnswerClick from app.js  check if it correct and gice score*/}
   
             <input 
             type="radio" 
             value={val} 
             checked={resetSelectedOption === val}  
+         //line 32 when user click it tick only one radion button that tick--checked means tick when user tick
             onChange={handleResetOption}/>
             {val}
           </li>

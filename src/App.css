@@ -1,0 +1,14 @@
+.wrapper{
+    width: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+}
+/*use on allquestion.css and score.css  */
+.mainBox{
+    width: 50%;
+    height: 400px;
+    border: 2px solid blue;
+    padding: 30px 40px;
+}
