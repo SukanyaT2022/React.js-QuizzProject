@@ -30,6 +30,14 @@ const handleNextClick = ()=>{
   }
 }
 
+const handleBackClick =()=>{
+  if (currentQuestion > 0){
+    setCurrentQuestion(currentQuestion - 1 )
+  }
+
+  
+}
+
   return (
     <div className='wrapper'>
       <h2>Take the Quiz</h2>
@@ -41,7 +49,7 @@ const handleNextClick = ()=>{
       //we do this coz we want user answer question before show score
       //example if check email have to see log in page first then  can check email
       (currentQuestion < data.length - 1) ?
-       (  <AllQuestion nameData ={data[currentQuestion]} nameFunchandleAnswerClick = {handleAnswerClick} nameHandleNextClick={handleNextClick}/>):
+       (  <AllQuestion nameData ={data[currentQuestion]} nameFunchandleAnswerClick = {handleAnswerClick} nameHandleNextClick={handleNextClick} nameHandleBackClick={handleBackClick} nameCurrentQuestion = {currentQuestion}/>):
        (<Score nameScore={score} nameDataScore = {data}/>)
     }
     </div>

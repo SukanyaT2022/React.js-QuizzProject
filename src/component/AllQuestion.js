@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './AllQuestion.css';
 
 
-const AllQuestion = ({ nameData, nameFunchandleAnswerClick, nameHandleNextClick }) => {
+const AllQuestion = ({ nameData, nameFunchandleAnswerClick, nameHandleNextClick, nameHandleBackClick, nameCurrentQuestion }) => {
   const [resetSelectedOption, setResetSelectedOption] = useState(null)
   
   const handleResetOption =(e)=>{
@@ -39,7 +39,8 @@ setResetSelectedOption(e.target.value)
           </label>
         ))}
       </ul>
-
+      <button onClick={nameHandleBackClick} disabled = {nameCurrentQuestion === 0}>Back</button>
+      {/* disable use for exaplme it on question 1 we can not go back ward - back button will not show*/}
     <button onClick={handleNextButton}>Next</button>
     </div>
   );
