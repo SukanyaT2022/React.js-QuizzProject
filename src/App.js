@@ -40,7 +40,7 @@ const handleBackClick =()=>{
 
   return (
     <div className='wrapper'>
-      <h2>Take the Quiz</h2>
+      <h1>Take the Quiz</h1>
       <div className='mainBox'>
     {
       

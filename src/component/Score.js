@@ -1,4 +1,6 @@
 import React from 'react'
+import './Score.css'
+
 //method one 1 to put grade
 const Score = ({nameScore, nameDataScore }) => {
 
@@ -48,8 +50,8 @@ const findLetterGrade =(val)=>{
   console.log(userGrade)
   return (
     <div>
-     <h1>Completed Quizz.</h1>
-     <p>Your score : {nameScore} out of {nameDataScore.length} </p>
+     <h4>Completed the quiz.</h4>
+     <p>Your Score : {nameScore} out of {nameDataScore.length} </p>
      {/* method 1 */}
      {/* <p>Your Grade:{grade} </p> */}
 {/* 

@@ -17,7 +17,7 @@ setResetSelectedOption(e.target.value)
   return (
     <div>
     
-      <h2>Question No. {nameData.id}</h2>
+      <h3>Question No. {nameData.id}</h3>
       <h2>{nameData.question}</h2>
       <ul>
         {/* //display array option on DataQuesion.js [1,2,3] by map only option */}
@@ -39,9 +39,9 @@ setResetSelectedOption(e.target.value)
           </label>
         ))}
       </ul>
-      <button onClick={nameHandleBackClick} disabled = {nameCurrentQuestion === 0}>Back</button>
+      <button className='backButton' onClick={nameHandleBackClick} disabled = {nameCurrentQuestion === 0}>Back</button>
       {/* disable use for exaplme it on question 1 we can not go back ward - back button will not show*/}
-    <button onClick={handleNextButton}>Next</button>
+    <button className='nextButton' onClick={handleNextButton}>Next</button>
     </div>
   );
 };
