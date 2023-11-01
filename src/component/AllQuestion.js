@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import './AllQuestion.css';
 
-
 const AllQuestion = ({ nameData, nameFunchandleAnswerClick, nameHandleNextClick, nameHandleBackClick, nameCurrentQuestion }) => {
   const [resetSelectedOption, setResetSelectedOption] = useState(null)
   
@@ -14,6 +13,8 @@ setResetSelectedOption(e.target.value)
     setResetSelectedOption(null) // it reset radio batton everytime when click next button
     nameHandleNextClick(resetSelectedOption) //nameHandleNextClick set question function from app.js
   }
+
+  
   return (
     <div>
     
@@ -39,9 +40,10 @@ setResetSelectedOption(e.target.value)
           </label>
         ))}
       </ul>
+      {/* //disable line 44 if not click any answer it will not let go to the next question -- means disable */}
       <button className='backButton' onClick={nameHandleBackClick} disabled = {nameCurrentQuestion === 0}>Back</button>
       {/* disable use for exaplme it on question 1 we can not go back ward - back button will not show*/}
-    <button className='nextButton' onClick={handleNextButton}>Next</button>
+    <button className='nextButton' onClick={handleNextButton} disabled={resetSelectedOption===null}>Next</button>
     </div>
   );
 };

@@ -33,9 +33,14 @@ const handleNextClick = ()=>{
 const handleBackClick =()=>{
   if (currentQuestion > 0){
     setCurrentQuestion(currentQuestion - 1 )
-  }
+  } 
+}
 
-  
+//2 way -way 1 make func from app.js set current function to 0 and set cuurentscore too 0
+const handleResetButton =()=>{
+setCurrentQuestion(0)
+setScore(0)
+
 }
 
   return (
@@ -50,7 +55,7 @@ const handleBackClick =()=>{
       //example if check email have to see log in page first then  can check email
       (currentQuestion < data.length - 1) ?
        (  <AllQuestion nameData ={data[currentQuestion]} nameFunchandleAnswerClick = {handleAnswerClick} nameHandleNextClick={handleNextClick} nameHandleBackClick={handleBackClick} nameCurrentQuestion = {currentQuestion}/>):
-       (<Score nameScore={score} nameDataScore = {data}/>)
+       (<Score nameScore={score} nameDataScore = {data} nameHandleResetButton = {handleResetButton}/>)
     }
     </div>
     </div>
