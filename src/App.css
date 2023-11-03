@@ -15,6 +15,7 @@ top: 50%;
 left: 50%;
 transform: translate(-50%,-50%);
 
+
 }
 .wrapper h1{
     background-color: #ff9668;
@@ -30,5 +31,27 @@ transform: translate(-50%,-50%);
     border: 2px solid #ff9668;
     padding: 30px 40px;
 }
+@media screen and (max-width:990px){
+    .wrapper{
+    top: 30%;
+    } 
+    .mainBox{
+        width: 70%;
+    } 
+    .wrapper h1{
+        width: 70%;
+    }
+}
+
+@media screen and (max-width:600px){
+    
+    .mainBox{
+        width: 90%;
+    } 
+    .wrapper h1{
+        width: 90%;
+    }
+} 
+
 
 

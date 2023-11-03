@@ -21,3 +21,24 @@ input[type=radio]{
     padding: 20px 30px;
     background-color: #edff8f;
 }
+
+@media screen and (max-width:990px){
+    .nextButton{
+        font-size: 20px;
+        font-weight: bold;
+    }
+    .backButton{
+        font-size: 20px;
+        font-weight: bold;
+    }  
+}
+@media screen and (max-width:600px){
+    .nextButton{
+        font-size: 20px;
+        font-weight: bold;
+    }
+    .backButton{
+        font-size: 20px;
+        font-weight: bold;
+    }   
+}

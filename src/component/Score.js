@@ -61,7 +61,7 @@ const Score = ({nameScore, nameDataScore, nameHandleResetButton }) => {
      method 3 */}
      {/* <p> Your Grade: {userGrade}</p> */}
 
-     <button onClick={nameHandleResetButton}>Reset</button>
+     <button onClick={nameHandleResetButton} className='resetButton'>Reset</button>
 
     </div>
   )
